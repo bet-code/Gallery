@@ -1,0 +1,188 @@
+.gallery {
+    width: 75%;
+    padding: 20px;
+    position: relative;
+    @media (max-width: 780px) {
+        width: 100%;
+        padding: 0;
+        margin: 20px auto;
+    }
+}
+.btn-close {
+    position: absolute;
+    right: 40px;
+    top: -50px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .5s .5s ease;
+    z-index: 4;
+    &:hover {
+        animation: show 2s infinite;
+    }    
+    @media (max-width: 780px) {
+        top: -70px;
+        right: 30px;
+    }
+}
+@keyframes show {
+    20% { transform: rotate3d(0, 0, 1, 15deg); }  
+    40% { transform: rotate3d(0, 0, 1, -10deg); }  
+    60% { transform: rotate3d(0, 0, 1, 5deg); } 
+    80% { transform: rotate3d(0, 0, 1, -5deg); }  
+    to {  transform: rotate3d(0, 0, 1, 0deg); }
+}
+
+.show {
+    pointer-events: auto;
+    opacity: 1;
+    transform-origin: top center;
+    animation: show 2s forwards;
+  }
+.gallery-park-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 450px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    z-index: 6;
+    @media (max-width: 501px) {
+        flex-direction: column;
+    }
+}
+.gallery-park {
+    flex:1;
+    margin: 5px;
+    height: 80%;
+    border: 5px solid #fff;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+    transition: flex .8s cubic-bezier(0.5, 0.2, 0.2, 1.2),
+                border .5s .3s,
+                margin .3s ease,
+                height .5s .6s cubic-bezier(0.5, 0.2, 0.2, 1.2);
+    background: linear-gradient(rgba(2,2,2,.8), rgba(2,2,2,.8));
+    box-shadow: -5px 15px 15px -5px #222;
+    position: relative;
+    @media (max-width: 800px) {
+        border: 5px solid #fff;
+    }
+    &:hover {
+        flex: 5;
+
+    }
+    h2 {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        margin: 0;
+        padding: 10px 20px;
+        overflow: hidden;
+        border-radius: 2px;
+        font-size: 1.8rem;
+        white-space: nowrap;
+        color: #fff;
+        background: linear-gradient(to right, rgba(159, 196, 240,.9) 50%, transparent);
+        box-shadow: -2px 1px 3px #222;
+        opacity: 1;
+        isolation: isolate;
+        transition: top .3s .5s ease;
+        z-index: 5;
+    }
+}
+.kearney-lake {   
+    background: url(../assets/kearney1.jpg) center;
+    background-size: cover;
+}
+.lake-of-two-rivers {   
+    background: url(../assets/lake-of-two-river1.jpg) center;
+    background-size: cover;
+}
+.pog-lake {   
+    background: url(../assets/pog1.jpg) center;
+    background-size: cover;
+}
+.canisbay-lake {   
+    background: url(../assets/canisbay-lake3.jpg) center;
+    background-size: cover;
+}
+.park-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+// gallery images
+
+.park-img-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: linear-gradient(to right top, transparent -20% ,rgba(159, 196, 240,.8), transparent 110%);
+    transform: translateX(100%);
+    transition: transform .5s .7s cubic-bezier(0.5, 0.2, 0.2, 1.2);
+    position: relative;
+}
+
+.park-img {
+    flex: 1;
+    width: 25%;
+    height: 70%;
+    margin: 0 5px;
+    transition: flex .3s cubic-bezier(0.5, 0.2, 0.2, 1.1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: -5px 15px 15px -5px #222;
+    transition: flex .3s cubic-bezier(0.5, 0.2, 0.2, 1.1),
+                margin .3s ease,
+                height .3s ease;
+    @media all and (min-width: 800px ){
+        &:hover {
+            flex: 3;
+        }
+        &:hover h3 {
+            transform: translate(-50%,-50%) rotate(0deg);
+        }
+    }
+    h3 {
+        position: absolute;
+        color: #fff;
+        background: linear-gradient(to right, teal 25%, transparent);
+        margin: 0;
+        font-size: 2rem;
+        white-space: nowrap;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        transition: opacity .5s ease,
+                    transform .3s cubic-bezier(0.5, 0.2, 0.2, 1.1);
+        @media (max-width: 501px) {
+            transform: translate(-50%,-50%) rotate(-90deg);
+        }
+    }
+}
+.slide-in {
+    transform: translateX(0%);
+}
+
+.expand {
+    flex: 7;
+    border: 10px solid #fff;
+    height: 100%;
+    margin: 0;
+}
+.collapse {
+    flex: 0;
+    margin: 0;
+    border: 0 solid transparent;
+}
