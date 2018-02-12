@@ -11,18 +11,21 @@
 .btn-close {
     position: absolute;
     right: 40px;
-    top: -50px;
+    top: -40px;
     opacity: 0;
     pointer-events: none;
     transition: opacity .5s .5s ease;
     z-index: 4;
     &:hover {
         animation: show 2s infinite;
-    }    
+    }     
     @media (max-width: 780px) {
         top: -70px;
         right: 30px;
     }
+    @media (max-width: 650px) {
+        top: -60px;
+    }   
 }
 @keyframes show {
     20% { transform: rotate3d(0, 0, 1, 15deg); }  

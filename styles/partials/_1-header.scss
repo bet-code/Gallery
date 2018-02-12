@@ -6,8 +6,6 @@ header {
         display: inline-block;
         margin: 0 auto;
         padding: 0;
-    }
-    @media (max-width: 501px) {
         text-align: left;
     }
     h1 {
@@ -28,8 +26,11 @@ header {
             background: linear-gradient(to right, rgba(0, 128, 128, .8), transparent 110%);
             z-index: -1;
             isolation: isolate;
+            @media (max-width: 650px) {
+                width: 80%;
+            }
             @media (max-width: 501px) {
-                width: 65%;
+                width: 70%;
             }
         }
         @media (max-width: 501px) {

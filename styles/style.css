@@ -146,11 +146,26 @@ body {
 
 .wrapper {
   width: 95%;
-  max-width: 1800px;
-  margin: 0 auto; }
+  min-height: 100vh;
+  max-width: 1366px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
 
 main {
-  min-height: 100vh;
+  margin: auto 0;
+  min-height: 90vh;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -180,9 +195,7 @@ header {
     header {
       display: inline-block;
       margin: 0 auto;
-      padding: 0; } }
-  @media (max-width: 501px) {
-    header {
+      padding: 0;
       text-align: left; } }
   header h1 {
     margin: 0;
@@ -205,9 +218,12 @@ header {
       background: linear-gradient(to right, rgba(0, 128, 128, 0.8), transparent 110%);
       z-index: -1;
       isolation: isolate; }
+      @media (max-width: 650px) {
+        header h1:before {
+          width: 80%; } }
       @media (max-width: 501px) {
         header h1:before {
-          width: 65%; } }
+          width: 70%; } }
     @media (max-width: 501px) {
       header h1 {
         font-size: 5rem; } }
@@ -238,7 +254,7 @@ header {
 .btn-close {
   position: absolute;
   right: 40px;
-  top: -50px;
+  top: -40px;
   opacity: 0;
   pointer-events: none;
   -webkit-transition: opacity .5s .5s ease;
@@ -252,6 +268,9 @@ header {
     .btn-close {
       top: -70px;
       right: 30px; } }
+  @media (max-width: 650px) {
+    .btn-close {
+      top: -60px; } }
 
 @-webkit-keyframes show {
   20% {
@@ -501,3 +520,20 @@ header {
   flex: 0;
   margin: 0;
   border: 0 solid transparent; }
+
+footer {
+  width: 100%;
+  text-align: right;
+  padding: 5px 0; }
+  footer p {
+    font-size: 1.6rem;
+    padding: 0;
+    margin: 0; }
+  footer a {
+    text-decoration: none;
+    color: teal;
+    -webkit-transition: color .3s ease;
+    -o-transition: color .3s ease;
+    transition: color .3s ease; }
+    footer a:hover {
+      color: #fff; }

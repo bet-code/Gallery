@@ -89,8 +89,8 @@ gallery.algonnquinPark = [
     }
 ];
 
-// Maps image gallery array then append to ul
-// then map imgs sub-array and append to sub ul
+// Maps image gallery array and
+// also map imgs sub-array 
 gallery.displayImg = () => {
 	gallery.algonnquinPark.map(park => {
         const parkName = park.campground;
@@ -116,22 +116,18 @@ gallery.displayImg = () => {
     `)
     });
 }
+
 // Effects that controls the animations and effects
 gallery.effects = () => {
+
     // Effects when the campground is clicked
     $('.gallery-park').on('click', function(){
         $(this).find('h2').css('top','30px');
         $(this).addClass('expand').siblings().addClass('collapse');
         $(this).children().addClass('slide-in');
         $('.btn-close').addClass('show');
-    }); 
-    // $('.gallery-park h2').on('click', function() {
-    //         $(this);
-    //     // $('.btn-close').removeClass('show');
-    //     // $('.gallery-park').removeClass('expand').siblings().removeClass('collapse');
-    //     // $('.park-img').removeClass('expand').siblings().removeClass('collapse');
-    //     // $('.gallery-park').children().removeClass('slide-in').css('transition-delay', '0s');
-    // })   
+    });
+
     // Effects when the Close button is clicked
     $('.btn-close').on('click', function() {
         $('.gallery-park h2').css('top','50%');
@@ -140,6 +136,7 @@ gallery.effects = () => {
         $('.park-img').removeClass('expand').siblings().removeClass('collapse');
         $('.gallery-park').children().removeClass('slide-in').css('transition-delay', '0s');
     })   
+    
     // Effects when the image is clicked
     $('.park-img').on('click', function(){
         if ($(this).hasClass('expand')) {
